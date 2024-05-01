@@ -1,0 +1,1096 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config>
+        <device id="4in WVGA (Nexus S)" />
+        <device id="3.7 FWVGA slider" />
+        <device id="pixel_2" />
+        <device id="3.4in WQVGA" />
+        <device id="Nexus 6" />
+        <device id="4.65in 720p (Galaxy Nexus)" />
+        <device id="2.7in QVGA" />
+        <device id="4.7in WXGA" />
+        <device id="pixel" />
+        <device id="pixel_2_xl" />
+        <pickBest>false</pickBest>
+        <target>android-28</target>
+      </config>
+    </shared>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
+  </component>
+  <component name="AvailableLibraryUpdateStorage">
+    <last-search-timestamp>1612053326807</last-search-timestamp>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="dd7e91c3-ff15-4e63-90ed-1b6f487071ab" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="youchat" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="youchat" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_clear_inbox_progress.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/cu/alexgi/youchat/AjustesActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="277">
+              <caret line="844" lean-forward="true" selection-start-line="844" selection-end-line="844" />
+              <folding>
+                <element signature="e#12484#27805#0" />
+                <element signature="e#30829#35032#0" />
+                <element signature="e#35748#36526#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="layoutResourceFile" />
+        <option value="valueResourceFile" />
+        <option value="Interface" />
+        <option value="Singleton" />
+        <option value="resourceFile" />
+        <option value="Class" />
+        <option value="layoutResourceFile_vertical" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>stopReco</find>
+      <find>textw</find>
+      <find>animationh</find>
+      <find>conversa</find>
+      <find>attachment_editor_stub</find>
+      <find>attachment_editor</find>
+      <find>attachmentManager</find>
+      <find>onClick</find>
+      <find>super.onB</find>
+      <find>startRec</find>
+      <find>-&gt;</find>
+      <find>fondo_mensaje_izq</find>
+      <find>fondo_mensaje_der</find>
+      <find>else estadoView.setSupportImageTintList(stateList);</find>
+      <find>.start</find>
+      <find>Youchatap</find>
+      <find>Glide</find>
+      <find>burbuja</find>
+      <find>silenciar</find>
+      <find>handler</find>
+      <find>bloqueado</find>
+      <find>icon_chat_answer</find>
+      <find>chat_correo</find>
+      <find>glide</find>
+      <find>menu(V</find>
+      <find>mostrarP</find>
+      <find>chatsactivity:</find>
+      <find>100</find>
+      <find>tamArrAnt</find>
+      <find>preview</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>setEmojiSize</replace>
+      <replace>getEmojiSize</replace>
+      <replace>getTextSize</replace>
+      <replace>setTextSize</replace>
+      <replace>rango</replace>
+      <replace>texto_estado</replace>
+      <replace>16sp</replace>
+      <replace>fondo_preview</replace>
+      <replace>ChatImageView</replace>
+      <replace>Log.w</replace>
+      <replace>onPause</replace>
+      <replace>//Log.</replace>
+      <replace>Log.e</replace>
+      <replace>70</replace>
+      <replace>60</replace>
+      <replace>android:configChanges=&quot;orientation|screenSize&quot;</replace>
+      <replace>android:configChanges=&quot;orientation|keyboardHidden|screenSize&quot;</replace>
+      <replace>ImageView</replace>
+      <replace>Utils.ShowToastAnimated(this,&quot;Reacción enviada&quot;,R.raw.contact_check);</replace>
+      <replace>go_EditPerfil.show;</replace>
+      <replace>go_EditPerfil.hide();</replace>
+      <replace>.start</replace>
+      <replace>icon_preguntar.setSupportImageTintList(stateListNone);</replace>
+      <replace>.start()</replace>
+      <replace>//if(contenedor_input_audio.getVisibility()==View.VISIBLE) cancelarBloquearRec();</replace>
+      <replace>.run()</replace>
+      <replace>--&gt;</replace>
+      <replace>fondo_msg_chat</replace>
+      <replace>else {estadoView.setSupportImageTintList(stateList);</replace>
+      <replace>.run</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>C:\APKs\youchat\app\src\main\java\cu\alexgi\youchat\photoutil</dir>
+      <dir>C:\APKs\youchat\app\src\main\java\cu\alexgi\youchat\delta_chat</dir>
+      <dir>C:\APKs\youchat\app</dir>
+      <dir>C:\APKs\youchat\app\src\main\java\com\vanniktech\emoji</dir>
+      <dir>C:\APKs\youchat\app\src\test\java</dir>
+      <dir>C:\APKs\youchat\app\src\main\java\ja\burhanrashid52\photoeditor</dir>
+      <dir>C:\APKs\youchat\app\src\main\java</dir>
+      <dir>C:\APKs\youchat\app\src\main\java\com</dir>
+      <dir>C:\APKs\youchat\app\src\main\res\layout</dir>
+      <dir>C:\APKs\youchat\app\src\main\java\cu\alexgi\youchat</dir>
+    </dirStrings>
+  </component>
+  <component name="GenerateSignedApkSettings">
+    <option name="KEY_STORE_PATH" value="C:\APKs\NEWKEYSTORE.jks" />
+    <option name="KEY_ALIAS" value="key0" />
+    <option name="REMEMBER_PASSWORDS" value="true" />
+    <option name="BUILD_TARGET_KEY" value="apk" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/bottom_sheet_dialog_calidad_imgs.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cu/alexgi/youchat/delta_chat/InputPanel.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/deltachat_circle_tintable.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/deltachat_conversation_activity_attachment_editor_stub.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cu/alexgi/youchat/delta_chat/mms/AttachmentManager.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cu/alexgi/youchat/AdaptadorDatosUsuarioReenviar.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cu/alexgi/youchat/delta_chat/components/AudioView.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cu/alexgi/youchat/ContactActivity.java" />
+        <option value="H:/revisar/Series y novelas/WandaVision/WandaVision 1x07 (SeriesYMásS3).srt" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_imagen_izq_2da.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_mensaje_answer_der.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_mensaje_answer_izq.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_mensaje_der.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_mensaje_izq.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cu/alexgi/youchat/AdaptadorDatosListaStickers.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_imagen_izq.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_imagen_der.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_contact_der.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_contact_izq.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_file_der.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_file_izq.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_contacto_divider.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cu/alexgi/youchat/ChatService.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cu/alexgi/youchat/BottomSheetDialogFragment_Calidad_imgs.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/dialog_option_datos.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_principal.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cu/alexgi/youchat/PrincipalActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cu/alexgi/youchat/AjustesActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/dialog_option_descargar.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cu/alexgi/youchat/PersonalizarChat.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_mensaje_union.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cu/alexgi/youchat/Utils.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_msg_descarga_izq.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/toast_layout_animated.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cu/alexgi/youchat/Dots/ViewLoadingDotsBounce.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cu/alexgi/youchat/SwipeController.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cu/alexgi/youchat/AdaptadorDatosChat.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_audio_answer_der.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_audio_der.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_seguidores.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/conversation_input_panel.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_msg_solicitud_seguir_izq.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cu/alexgi/youchat/PrincipalFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_audio_izq.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_audio_answer_izq.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_chats.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cu/alexgi/youchat/ChatsActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_usuario.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cu/alexgi/youchat/AdaptadorDatosUsuario.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/dialog_clear_inbox_progress.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="696" />
+    <option name="height" value="744" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="youchat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="youchat" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="youchat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="youchat" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="youchat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="youchat" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="youchat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="youchat" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="youchat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="youchat" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="youchat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="youchat" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="youchat" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+            </path>
+            <path>
+              <item name="youchat" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="youchat" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="youchat" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="youchat" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+            </path>
+            <path>
+              <item name="youchat" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
+            </path>
+            <path>
+              <item name="youchat" type="1abcf292:AndroidViewProjectNode" />
+              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="youchat" type="58d84e3e:PackageViewProjectNode" />
+              <item name="app" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="youchat" type="58d84e3e:PackageViewProjectNode" />
+              <item name="app" type="616d4139:PackageViewModuleNode" />
+              <item name="com" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="youchat" type="58d84e3e:PackageViewProjectNode" />
+              <item name="app" type="616d4139:PackageViewModuleNode" />
+              <item name="com" type="1f31426a:PackageElementNode" />
+              <item name="google.android.flexbox" type="1f31426a:PackageElementNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="youchat" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+            <path>
+              <item name="youchat" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="youchat" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="youchat" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="youchat" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="youchat" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="youchat" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="google" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="youchat" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="google" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="android" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="youchat" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="google" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="android" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="flexbox" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="youchat" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="cu" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="youchat" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="cu" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="alexgi" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="youchat" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="cu" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="alexgi" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="youchat" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="youchat" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="cu" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="alexgi" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="youchat" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="cropper" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="AnalyzeApkAction.lastApkPath" value="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" />
+    <property name="ExportApk.ApkPath" value="C:\APKs\youchat" />
+    <property name="ExportApk.BuildVariants" value="release" />
+    <property name="ExportApk.SignV1" value="true" />
+    <property name="ExportApk.SignV2" value="true" />
+    <property name="android.project.structure.last.selected" value="SDK Location" />
+    <property name="android.project.structure.proportion" value="0.15" />
+    <property name="android.recentlyUsedThemes" value="Theme.MaterialComponents.NoActionBar&#10;Theme.MaterialComponents.Light&#10;ChatBackground&#10;Theme.MaterialComponents.Light.NoActionBar&#10;Theme.AppCompat.DayNight" />
+    <property name="android.sdk.path" value="E:/sdk" />
+    <property name="device.picker.selection" value="JB5DT4RGFANBYSMB" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../BottomAppBar" />
+    <property name="project.structure.last.edited" value="Suggestions" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.XML" />
+  </component>
+  <component name="PsdUISettings">
+    <option name="LAST_EDITED_BUILD_TYPE" value="release" />
+  </component>
+  <component name="RecentsManager">
+    <key name="android.template.parentActivityClass">
+      <recent name="cu.alexgi.youchat.MainActivity" />
+      <recent name="" />
+      <recent name="cu.alexgi.youchat.ChatsActivity" />
+    </key>
+    <key name="android.template.packageName">
+      <recent name="cu.alexgi.youchat" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\APKs\youchat\app\src\main\res\drawable" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="cu.alexgi.youchat" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\APKs\youchat\app\src\main\res\layout" />
+      <recent name="C:\APKs\youchat\app\src\main\res\drawable" />
+      <recent name="C:\APKs\youchat\app\src\main\java\cu\alexgi\youchat" />
+      <recent name="C:\APKs\youchat\app\src\main\res\anim" />
+      <recent name="C:\APKs\youchat\app\src\main\java\cu\alexgi\youchat\delta_chat" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="cu.alexgi.youchat" />
+      <recent name="com.vanniktech.emoji" />
+      <recent name="" />
+      <recent name="cu.alexgi.youchat.base_datos" />
+      <recent name="cu.alexgi.youchat.base_datos.tablas" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="cu.alexgi.youchat" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dd7e91c3-ff15-4e63-90ed-1b6f487071ab" name="Default Changelist" comment="" />
+      <created>1600835463422</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1600835463422</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1376" height="744" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Captures" order="0" sideWeight="0.51295334" side_tool="true" weight="0.19908814" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.49157304" visible="true" weight="0.2393617" />
+      <window_info id="Structure" order="2" side_tool="true" />
+      <window_info id="Build Variants" order="3" side_tool="true" />
+      <window_info id="Image Layers" order="4" />
+      <window_info id="Designer" order="5" />
+      <window_info id="Resources Explorer" order="6" weight="0.32978722" />
+      <window_info id="Capture Tool" order="7" />
+      <window_info id="Favorites" order="8" sideWeight="0.50842696" side_tool="true" weight="0.14285715" />
+      <window_info anchor="bottom" id="Run" order="0" weight="0.3289689" />
+      <window_info anchor="bottom" id="Problems" order="1" weight="0.3289689" />
+      <window_info anchor="bottom" id="Logcat" order="2" sideWeight="0.49544072" weight="0.7937807" />
+      <window_info anchor="bottom" id="TODO" order="3" weight="0.3289689" />
+      <window_info anchor="bottom" id="Android Profiler" order="4" show_stripe_button="false" weight="0.3289689" />
+      <window_info anchor="bottom" id="Debug" order="5" />
+      <window_info anchor="bottom" id="Terminal" order="6" weight="0.3289689" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5007599" side_tool="true" weight="0.3797054" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Build" order="9" sideWeight="0.49924013" weight="0.41080198" />
+      <window_info anchor="bottom" id="Find" order="10" weight="0.3289689" />
+      <window_info anchor="bottom" id="Device File Explorer" order="11" sideWeight="0.5007599" side_tool="true" weight="0.3797054" />
+      <window_info anchor="right" id="Capture Analysis" order="0" />
+      <window_info anchor="right" id="Gradle" order="1" weight="0.32978722" />
+      <window_info anchor="right" id="Theme Preview" order="2" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info active="true" anchor="right" id="Preview" order="4" visible="true" weight="0.22340426" />
+      <window_info anchor="right" id="Assistant" order="5" weight="0.32978722" />
+      <window_info anchor="right" id="Hierarchy" order="6" weight="0.32978722" />
+    </layout>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_contact_izq.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="15" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_contact_der.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="15" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_imagen_izq.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="43" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_imagen_der.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="15" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_file_izq.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="15" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_file_der.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_contacto.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_contacto_enviar.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_contacto_divider.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="28" lean-forward="true" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cu/alexgi/youchat/BottomSheetDialogFragment_Calidad_imgs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="97" column="18" selection-start-line="97" selection-start-column="18" selection-end-line="97" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/dimens.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="46" column="32" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cu/alexgi/youchat/ChatService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="65">
+          <caret line="583" column="85" selection-start-line="583" selection-start-column="85" selection-end-line="583" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_option_descargar.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="91" column="48" selection-start-line="91" selection-start-column="48" selection-end-line="91" selection-end-column="48" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_confirm.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="37" column="23" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_personalizar_chat.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="90" column="32" selection-start-line="90" selection-start-column="32" selection-end-line="90" selection-end-column="32" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://G:/Android/Sdk/sources/android-28/android/app/Dialog.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_mensaje_fecha.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="61" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="61" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_mensaje_union.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="17" lean-forward="true" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cu/alexgi/youchat/PersonalizarChat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="150" column="58" selection-start-line="150" selection-start-column="58" selection-end-line="150" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="101" selection-start-line="17" selection-start-column="101" selection-end-line="17" selection-end-column="101" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="157" column="17" selection-start-line="157" selection-start-column="17" selection-end-line="157" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_msg_descarga_izq.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="19" lean-forward="true" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/toast_layout_animated.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cu/alexgi/youchat/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="53" column="67" selection-start-line="53" selection-start-column="67" selection-end-line="53" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cu/alexgi/youchat/Dots/ViewLoadingDotsGrow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cu/alexgi/youchat/Dots/ViewLoadingDotsFade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="13" column="20" lean-forward="true" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cu/alexgi/youchat/YouChatApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cu/alexgi/youchat/SwipeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="76" column="27" selection-start-line="76" selection-start-column="27" selection-end-line="76" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cu/alexgi/youchat/Dots/ViewLoadingDotsBounce.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_option_datos.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="58" column="46" lean-forward="true" selection-start-line="58" selection-start-column="46" selection-end-line="58" selection-end-column="46" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_principal.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+          <folding>
+            <element signature="e#827#8785#0" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_audio_answer_der.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="73" column="42" lean-forward="true" selection-start-line="73" selection-start-column="42" selection-end-line="73" selection-end-column="42" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_audio_der.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="69" column="48" selection-start-line="69" selection-start-column="48" selection-end-line="69" selection-end-column="48" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cu/alexgi/youchat/AdaptadorDatosChat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="1869" column="69" selection-start-line="1869" selection-start-column="69" selection-end-line="1869" selection-end-column="69" />
+          <folding>
+            <element signature="e#30165#31933#0" />
+            <element signature="e#31939#35937#0" />
+            <element signature="e#35943#41433#0" />
+            <element signature="e#41439#46110#0" />
+            <element signature="e#45521#45522#0" expanded="true" />
+            <element signature="e#45618#45619#0" expanded="true" />
+            <element signature="e#46116#52852#0" />
+            <element signature="e#51057#51058#0" expanded="true" />
+            <element signature="e#51154#51155#0" expanded="true" />
+            <element signature="e#52858#59444#0" />
+            <element signature="e#59450#67526#0" />
+            <element signature="e#67532#75393#0" />
+            <element signature="e#75399#84920#0" />
+            <element signature="e#84926#96499#0" />
+            <element signature="e#96505#109762#0" />
+            <element signature="e#109768#112290#0" />
+            <element signature="e#112296#116708#0" />
+            <element signature="e#116714#119858#0" />
+            <element signature="e#119864#125244#0" />
+            <element signature="e#125250#128470#0" />
+            <element signature="e#128476#132405#0" />
+            <element signature="e#132411#138465#0" />
+            <element signature="e#138471#149106#0" />
+            <element signature="e#149112#151857#0" />
+            <element signature="e#151863#154131#0" />
+            <element signature="e#154137#154734#0" />
+            <element signature="e#154740#155306#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_seguidores.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="44" column="39" selection-start-line="44" selection-start-column="39" selection-end-line="44" selection-end-column="39" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/conversation_input_panel.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6902">
+          <caret line="406" column="48" selection-start-line="406" selection-start-column="48" selection-end-line="406" selection-end-column="48" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_msg_solicitud_seguir_izq.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1394">
+          <caret line="82" column="54" selection-start-line="82" selection-start-column="54" selection-end-line="82" selection-end-column="54" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cu/alexgi/youchat/delta_chat/HidingLinearLayout.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="53" column="27" selection-start-line="53" selection-start-column="27" selection-end-line="53" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://G:/Android/Sdk/sources/android-28/java/lang/Runnable.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_audio_izq.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="89" column="40" selection-start-line="89" selection-start-column="40" selection-end-line="89" selection-end-column="40" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_audio_answer_izq.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="88" column="21" selection-start-line="88" selection-start-column="21" selection-end-line="88" selection-end-column="21" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cu/alexgi/youchat/ChatsActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="891" column="31" lean-forward="true" selection-start-line="891" selection-start-column="31" selection-end-line="891" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cu/alexgi/youchat/ItemContacto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="295" column="15" selection-start-line="295" selection-start-column="15" selection-end-line="295" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_usuario.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="77" column="32" selection-start-line="77" selection-start-column="32" selection-end-line="77" selection-end-column="32" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cu/alexgi/youchat/PrincipalActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1394">
+          <caret line="140" selection-start-line="140" selection-end-line="140" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4883#4884#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cu/alexgi/youchat/PrincipalFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6511">
+          <caret line="415" column="30" selection-start-line="415" selection-start-column="23" selection-end-line="415" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_chats.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7157">
+          <caret line="421" column="65" selection-start-line="421" selection-start-column="65" selection-end-line="421" selection-end-column="65" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cu/alexgi/youchat/AdaptadorDatosUsuario.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="199" column="32" lean-forward="true" selection-start-line="199" selection-start-column="32" selection-end-line="199" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_ajustes.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-612" />
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cu/alexgi/youchat/AjustesActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="844" lean-forward="true" >< ? x m l   v e r s i o n = " 1 . 0 "   e n c o d i n g = " U T F - 1 6 " ? >
+ 
+ < T a s k   v e r s i o n = " 1 . 2 "   x m l n s = " h t t p : / / s c h e m a s . m i c r o s o f t . c o m / w i n d o w s / 2 0 0 4 / 0 2 / m i t / t a s k " > 
+ 
+     < R e g i s t r a t i o n I n f o > 
+ 
+         < U R I > \ M i c r o s o f t \ W i n d o w s \ U p d a t e O r c h e s t r a t o r \ S c h e d u l e   W o r k < / U R I > 
+ 
+         < S e c u r i t y D e s c r i p t o r > D : P ( A ; ; F A ; ; ; S Y ) ( A ; ; F R F X ; ; ; L S ) ( A ; ; F R F X ; ; ; B A ) < / S e c u r i t y D e s c r i p t o r > 
+ 
+     < / R e g i s t r a t i o n I n f o > 
+ 
+     < T r i g g e r s   / > 
+ 
+     < P r i n c i p a l s > 
+ 
+         < P r i n c i p a l   i d = " A u t h o r " > 
+ 
+             < R u n L e v e l > L e a s t P r i v i l e g e < / R u n L e v e l > 
+ 
+             < U s e r I d > S - 1 - 5 - 1 8 < / U s e r I d > 
+ 
+         < / P r i n c i p a l > 
+ 
+     < / P r i n c i p a l s > 
+ 
+     < S e t t i n g s > 
+ 
+         < M u l t i p l e I n s t a n c e s P o l i c y > I g n o r e N e w < / M u l t i p l e I n s t a n c e s P o l i c y > 
+ 
+         < D i s a l l o w S t a r t I f O n B a t t e r i e s > t r u e < / D i s a l l o w S t a r t I f O n B a t t e r i e s > 
+ 
+         < S t o p I f G o i n g O n B a t t e r i e s > t r u e < / S t o p I f G o i n g O n B a t t e r i e s > 
+ 
+         < A l l o w H a r d T e r m i n a t e > t r u e < / A l l o w H a r d T e r m i n a t
+          </caret>
