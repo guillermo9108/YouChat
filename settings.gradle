@@ -13,6 +13,8 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        // Repositorio de JitPack, necesario para librerías como PhotoView
+        maven { url 'https://jitpack.io' }
     }
 }
 
