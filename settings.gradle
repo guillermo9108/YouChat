@@ -1,1 +1,15 @@
-include ':app', ':you_emoji'
+// Configura los repositorios para que Gradle pueda descargar dependencias
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        // Repositorio de Google, necesario para el plugin de Android y otras librerías
+        google()
+        // Repositorio central de Maven para la mayoría de las dependencias
+        mavenCentral()
+    }
+}
+
+// Incluye los módulos de tu proyecto
+include ':app'
+include ':you_emoji'
+
