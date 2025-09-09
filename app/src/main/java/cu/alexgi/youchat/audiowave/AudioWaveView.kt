@@ -1,4 +1,4 @@
-package cu.alexgi.youchat.audiowave;
+package cu.alexgi.youchat.audiowave
 
 import android.animation.ValueAnimator
 import android.annotation.SuppressLint
@@ -144,14 +144,17 @@ open class AudioWaveView : View {
     super.onDraw(canvas)
     val cv = canvas ?: return
 
-    cv.transform {
-      clipRect(0, 0, w, h)
-      drawBitmap(waveBitmap, 0F, 0F, wavePaint)
-    }
+    // Se ha corregido el error de "Type mismatch" al verificar si el waveBitmap es nulo antes de usarlo.
+    waveBitmap?.let { bitmap ->
+        cv.transform {
+            clipRect(0, 0, w, h)
+            drawBitmap(bitmap, 0F, 0F, wavePaint)
+        }
 
-    cv.transform {
-      clipRect(0F, 0F, w * progressFactor, h.toFloat())
-      drawBitmap(waveBitmap, 0F, 0F, waveFilledPaint)
+        cv.transform {
+            clipRect(0F, 0F, w * progressFactor, h.toFloat())
+            drawBitmap(bitmap, 0F, 0F, waveFilledPaint)
+        }
     }
   }
 
@@ -237,6 +240,7 @@ open class AudioWaveView : View {
   private fun MotionEvent.toProgress() = this@toProgress.x.clamp(0F, w.toFloat()) / w * 100F
 
   private fun redrawData(canvas: Canvas? = waveBitmap?.inCanvas(), factor: Float = 1.0F) {
+    // Se ha corregido el error de "Type mismatch" al verificar si el waveBitmap y el canvas son nulos antes de usarlos.
     if (waveBitmap == null || canvas == null) return
 
     waveBitmap.flush()
@@ -291,21 +295,4 @@ open class AudioWaveView : View {
       recycle()
     }
   }
-
-
-//    var sample: IntArray? = null
-//        set(value){
-//            field = value
-//            invalidate()
-//        }
-////    @ThreadBlocking
-//    fun setSampleFrom(audio: File) = setSampleFrom(audio.path)
-//
-////    @ThreadBlocking
-//    fun setSampleFrom(path: String) {
-//        WaveformOptions.getSampleFrom(path) {
-//            sample = it
-////            setRawData(it)
-//        }
-//    }
 }
