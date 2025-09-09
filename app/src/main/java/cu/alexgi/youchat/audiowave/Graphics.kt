@@ -1,47 +1,78 @@
-package cu.alexgi.youchat.audiowave;
+package cu.alexgi.youchat.audiowave
 
-import android.graphics.*
+import android.content.res.Resources
+import android.graphics.Bitmap
+import android.graphics.Canvas
+import android.graphics.Color
+import android.graphics.Paint
+import android.graphics.PorterDuff
+import android.graphics.PorterDuffColorFilter
+import android.graphics.RectF
+import android.os.Handler
+import android.os.Looper
 import android.view.View
+import androidx.annotation.ColorInt
+import androidx.annotation.Px
+import kotlin.math.abs
+import kotlin.math.roundToInt
 
-internal fun View.dip(value: Int): Int = (value * resources.displayMetrics.density).toInt()
+internal val MAIN_THREAD = Handler(Looper.getMainLooper())
 
-internal fun smoothPaint(color: Int = Color.WHITE): Paint =
-    Paint().apply {
-      isAntiAlias = true
-      this.color = color
-    }
+internal fun smoothPaint(@ColorInt color: Int): Paint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+    this.color = color
+}
 
-internal fun filterPaint(color: Int = Color.BLACK): Paint =
-    Paint().apply {
-      isAntiAlias = true
-      colorFilter = filterOf(color)
-    }
-
-internal fun filterOf(color: Int = Color.BLACK) =
-    PorterDuffColorFilter(color, PorterDuff.Mode.SRC_ATOP)
+internal fun filterPaint(@ColorInt color: Int): Paint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+    colorFilter = PorterDuffColorFilter(color, PorterDuff.Mode.SRC_IN)
+}
 
 internal inline fun Canvas.transform(crossinline init: Canvas.() -> Unit) {
-  save()
-  init()
-  restore()
+    save()
+    init()
+    restore()
 }
 
-internal fun rectFOf(left: Int, top: Int, right: Int, bottom: Int) =
-    RectF(left.toFloat(), top.toFloat(), right.toFloat(), bottom.toFloat())
+@Px
+internal fun View.dip(value: Int): Int = (value * resources.displayMetrics.density).roundToInt()
 
-internal fun Int.withAlpha(alpha: Int): Int {
-  require(alpha in 0x00..0xFF)
-  return this and 0x00FFFFFF or (alpha shl 24)
+@ColorInt
+internal fun @receiver:ColorInt Int.withAlpha(@Px alpha: Int): Int = Color.argb(alpha, Color.red(this), Color.green(this), Color.blue(this))
+
+internal fun Float.clamp(min: Float, max: Float): Float = Math.max(min, Math.min(this, max))
+
+internal fun rectFOf(left: Int, top: Int, right: Int, bottom: Int): RectF = RectF(left.toFloat(), top.toFloat(), right.toFloat(), bottom.toFloat())
+
+internal fun Bitmap?.fits(neededW: Int, neededH: Int): Boolean = this != null && width == neededW && height == neededH
+
+internal fun Bitmap?.safeRecycle() {
+    this?.run {
+        if (!isRecycled) {
+            recycle()
+        }
+    }
 }
 
-internal fun Float.clamp(min: Float, max: Float) = Math.min(max, Math.max(this, min))
+internal fun Bitmap?.flush() {
+    this?.run {
+        eraseColor(Color.TRANSPARENT)
+    }
+}
 
-internal fun Bitmap.inCanvas(): Canvas = Canvas(this)
+internal fun Bitmap.inCanvas(f: Canvas.() -> Unit = {}): Canvas {
+    val canvas = Canvas(this)
+    canvas.f()
+    return canvas
+}
 
-internal fun Bitmap?.safeRecycle() =
-    if (this != null && !isRecycled) recycle() else Unit
+internal fun ByteArray.paste(value: ByteArray): ByteArray {
+    for (i in value.indices) {
+        this[i] = value[i]
+    }
+    return this
+}
 
-internal fun Bitmap?.flush() = this?.eraseColor(0)
+internal val Byte.abs: Byte
+    get() = abs(this.toInt()).toByte()
 
-internal fun Bitmap?.fits(neededW: Int, neededH: Int): Boolean =
-    this?.let { it.height == neededH && it.width == neededW } ?: false
+internal val Int.abs: Int
+    get() = abs(this)
