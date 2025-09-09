@@ -1,4 +1,4 @@
-YouChat, robusta aplicación de mensajería instantánea para dispositivos móviles a través de correo electrónico; los usuarios podrán enviarse textos,  imágenes, videos y mensajes multimedia de audio ilimitados. Respaldado por un equipo de jóvenes emprendedores que garantizan su mejora continua respondiendo a sus exigencias.. 
+YouChat, robusta aplicación de mensajería instantánea para dispositivos móviles a través de correo electrónico; los usuarios podrán enviarse textos,  imágenes, videos y mensajes multimedia de audio ilimitados. Respaldado por un equipo de jóvenes emprendedores que garantizan su mejora continua respondiendo a sus exigencias.
 
 Sin Cargos adicionales: no hay ningún cargo adicional para enviar mensajes desde la aplicación internacionalmente.
 Mensajes sin conexión: nunca perderá ningún mensaje, aun cuando no se conecte en meses.
