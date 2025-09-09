@@ -1,95 +1,155 @@
 package cu.alexgi.youchat.audiowave
 
-import android.graphics.Bitmap
+import android.content.Context
 import android.graphics.Canvas
-import android.graphics.Paint
+import android.graphics.Color
+import android.util.AttributeSet
+import android.view.MotionEvent
+import android.view.View
+import android.view.ViewConfiguration
 import androidx.annotation.IntRange
-import kotlin.math.roundToInt
+import androidx.annotation.WorkerThread
+import cu.alexgi.youchat.R
+import cu.alexgi.youchat.audiowave.Graphics.clamp
+import cu.alexgi.youchat.audiowave.Graphics.dip
+import cu.alexgi.youchat.audiowave.Graphics.rectFOf
+import cu.alexgi.youchat.audiowave.Graphics.roundToInt
+import cu.alexgi.youchat.audiowave.Graphics.transform
+import kotlin.math.abs
 
-internal class AudioWave(
-    private val view: AudioWaveView
-) {
-    var waveColor: Int = 0
-        set(value) {
-            field = value
-            if (field != 0) {
-                wavePaint.color = field
-                waveBackgroundPaint.color = field
-                waveBackgroundPaint.alpha = 50
+class AudioWaveView(
+    context: Context,
+    attrs: AttributeSet
+) : View(context, attrs) {
+
+    private val audioWave = AudioWave(this)
+
+    private var onProgressChanged: ((Float) -> Unit)? = null
+
+    private var duration: Long = 0
+    private var progress: Long = 0
+
+    private val samples = Sampler()
+
+    init {
+        val typedArray = context.obtainStyledAttributes(attrs, R.styleable.AudioWaveView, 0, 0)
+        audioWave.waveColor = typedArray.getColor(R.styleable.AudioWaveView_wave_color, 0)
+        audioWave.waveBackgroundColor = typedArray.getColor(R.styleable.AudioWaveView_wave_background_color, 0)
+        audioWave.waveGap = typedArray.getDimension(R.styleable.AudioWaveView_wave_gap, dip(2f))
+        typedArray.recycle()
+    }
+
+    override fun onAttachedToWindow() {
+        super.onAttachedToWindow()
+        audioWave.onAttached()
+    }
+
+    override fun onDetachedFromWindow() {
+        super.onDetachedFromWindow()
+        audioWave.onDetached()
+    }
+
+    override fun onDraw(canvas: Canvas) {
+        super.onDraw(canvas)
+        canvas.drawColor(Color.TRANSPARENT)
+
+        if (audioWave.isDirty()) {
+            audioWave.drawWave(width, height)
+        }
+
+        if (audioWave.waveBackgroundBitmap != null) {
+            canvas.drawBitmap(audioWave.waveBackgroundBitmap!!, 0f, 0f, audioWave.waveBackgroundPaint)
+        }
+
+        if (audioWave.waveBitmap != null) {
+            val progressWidth = if (duration == 0L) 0f else audioWave.waveBitmap!!.width * progress.toFloat() / duration.toFloat()
+            canvas.transform {
+                clipRect(rectFOf(0, 0, progressWidth.roundToInt, height))
+                drawBitmap(audioWave.waveBitmap!!, 0f, 0f, audioWave.wavePaint)
             }
         }
-    var waveBackgroundColor: Int = 0
-        set(value) {
-            field = value
-            if (field != 0) {
-                waveBackgroundPaint.color = field
+    }
+
+    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
+        val viewWidth = MeasureSpec.getSize(widthMeasureSpec)
+        val viewHeight = MeasureSpec.getSize(heightMeasureSpec)
+        setMeasuredDimension(viewWidth, viewHeight)
+    }
+
+    override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
+        super.onSizeChanged(w, h, oldw, oldh)
+        audioWave.setBitmapSize(w, h)
+        if (samples.isReady()) {
+            val waveData = samples.getWaveData(w, h.toFloat())
+            if (waveData != null) {
+                audioWave.setWaveData(waveData)
             }
         }
-    var waveGap: Float = 0f
-    private val wavePaint: Paint = Paint(Paint.ANTI_ALIAS_FLAG)
-    private val waveBackgroundPaint: Paint = Paint(Paint.ANTI_ALIAS_FLAG)
-    private var waveData: ByteArray? = null
-    var waveBitmap: Bitmap? = null
-        private set
-    var waveBackgroundBitmap: Bitmap? = null
-        private set
-    private var waveWidth = 0
-    private var waveHeight = 0
-    private var waveDirty = true
-
-    fun onAttached() {
-        wavePaint.color = waveColor
-        waveBackgroundPaint.color = waveBackgroundColor
     }
 
-    fun onDetached() {
-        waveBitmap?.safeRecycle()
-        waveBackgroundBitmap?.safeRecycle()
-    }
+    private var downX = 0f
+    private var isDragging = false
 
-    fun isDirty(): Boolean {
-        return waveDirty
-    }
-
-    fun setBitmapSize(width: Int, height: Int) {
-        if (waveBitmap.fits(width, height)) {
-            return
+    override fun onTouchEvent(event: MotionEvent): Boolean {
+        if (!isEnabled || !isClickable || duration == 0L) {
+            return false
         }
-        waveBitmap?.safeRecycle()
-        waveBackgroundBitmap?.safeRecycle()
-        waveWidth = width
-        waveHeight = height
-        waveBitmap = Bitmap.createBitmap(waveWidth, waveHeight, Bitmap.Config.ARGB_8888)
-        waveBackgroundBitmap = Bitmap.createBitmap(waveWidth, waveHeight, Bitmap.Config.ARGB_8888)
-        waveDirty = true
+        val touchSlop = ViewConfiguration.get(context).scaledTouchSlop
+        when (event.action) {
+            MotionEvent.ACTION_DOWN -> {
+                parent.requestDisallowInterceptTouchEvent(true)
+                isDragging = false
+                downX = event.x
+                return true
+            }
+            MotionEvent.ACTION_MOVE -> {
+                val dx = event.x - downX
+                if (abs(dx) > touchSlop) {
+                    isDragging = true
+                }
+                val rawProgress = event.x / width
+                progress = (rawProgress * duration.toFloat()).toLong().clamp(0, duration)
+                onProgressChanged?.invoke(progress.toFloat() / duration.toFloat())
+                invalidate()
+                return true
+            }
+            MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL -> {
+                parent.requestDisallowInterceptTouchEvent(false)
+                if (isDragging) {
+                    onProgressChanged?.invoke(progress.toFloat() / duration.toFloat())
+                }
+                isDragging = false
+                return true
+            }
+        }
+        return super.onTouchEvent(event)
     }
 
-    fun setWaveData(@IntRange(from = 0) waveData: ByteArray) {
-        this.waveData = waveData
-        waveDirty = true
+    fun setRawData(@WorkerThread rawData: ByteArray) {
+        Graphics.MAIN_THREAD.post {
+            samples.setRawData(rawData)
+            if (samples.isReady()) {
+                val waveData = samples.getWaveData(width, height.toFloat())
+                if (waveData != null) {
+                    audioWave.setWaveData(waveData)
+                }
+            }
+        }
     }
 
-    fun drawWave(width: Int, height: Int) {
-        if (waveData == null) return
-        val halfHeight = (height / 2f).roundToInt()
-
-        waveBackgroundBitmap?.flush()
-        val waveBackgroundCanvas = waveBackgroundBitmap?.inCanvas()
-        for (i in waveData!!.indices) {
-            val h = (waveData!![i].toFloat() * halfHeight).roundToInt()
-            val left = (i * waveGap)
-            val right = left + wavePaint.strokeWidth
-            waveBackgroundCanvas?.drawRect(left, (halfHeight - h), right, (halfHeight + h), waveBackgroundPaint)
+    fun setProgress(@IntRange(from = 0) progress: Long) {
+        if (progress != this.progress) {
+            this.progress = progress.clamp(0, duration)
+            invalidate()
         }
+    }
 
-        waveBitmap?.flush()
-        val waveCanvas = waveBitmap?.inCanvas()
-        for (i in waveData!!.indices) {
-            val h = (waveData!![i].toFloat() * halfHeight).roundToInt()
-            val left = (i * waveGap)
-            val right = left + wavePaint.strokeWidth
-            waveCanvas?.drawRect(left, (halfHeight - h), right, (halfHeight + h), wavePaint)
-        }
-        waveDirty = false
+    fun setDuration(@IntRange(from = 0) duration: Long) {
+        this.duration = duration.clamp(0, Long.MAX_VALUE)
+    }
+
+    fun setOnProgressChanged(onProgressChanged: (Float) -> Unit) {
+        this.onProgressChanged = onProgressChanged
     }
 }
