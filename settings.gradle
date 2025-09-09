@@ -1,10 +1,17 @@
-// Configura los repositorios para que Gradle pueda descargar dependencias
+// Configuración de los repositorios para los plugins de construcción
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
+// Configuración de los repositorios para las dependencias de la aplicación
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
-        // Repositorio de Google, necesario para el plugin de Android y otras librerías
         google()
-        // Repositorio central de Maven para la mayoría de las dependencias
         mavenCentral()
     }
 }
@@ -12,4 +19,3 @@ dependencyResolutionManagement {
 // Incluye los módulos de tu proyecto
 include ':app'
 include ':you_emoji'
-
