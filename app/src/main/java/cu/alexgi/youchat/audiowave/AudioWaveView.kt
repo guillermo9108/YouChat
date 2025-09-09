@@ -1,297 +1,149 @@
 package cu.alexgi.youchat.audiowave
 
-import android.animation.ValueAnimator
-import android.annotation.SuppressLint
 import android.content.Context
-import android.graphics.Bitmap
-import android.graphics.Canvas
-import android.graphics.Color
+import android.graphics.*
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
-import android.view.animation.OvershootInterpolator
-import cu.alexgi.youchat.R
+import android.view.ViewConfiguration
+import android.widget.TextView
+import androidx.annotation.IntRange
+import androidx.annotation.WorkerThread
+import kotlin.math.abs
 
-open class AudioWaveView : View {
+class AudioWaveView(
+    context: Context,
+    attrs: AttributeSet
+) : View(context, attrs) {
 
-  constructor(context: Context?) : super(context) {
-    setWillNotDraw(false)
-  }
+    private val audioWave = AudioWave(context, attrs)
 
-  constructor(context: Context?, attrs: AttributeSet?) : super(context, attrs) {
-    setWillNotDraw(false)
-    inflateAttrs(attrs)
-  }
+    private var onProgressChanged: ((Float) -> Unit)? = null
 
-  constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs,
-      defStyleAttr) {
-    setWillNotDraw(false)
-    inflateAttrs(attrs)
-  }
+    private var duration: Long = 0
+    private var progress: Long = 0
 
-  var onProgressListener: OnProgressListener? = null
+    private val samples = Sampler()
 
-  var onProgressChanged: (Float, Boolean) -> Unit = { _, _ -> Unit }
-
-  var onStartTracking: (Float) -> Unit = {}
-
-  var onStopTracking: (Float) -> Unit = {}
-
-  var chunkHeight: Int = 0
-    get() = if (field == 0) h else Math.abs(field)
-    set(value) {
-      field = value
-      redrawData()
+    init {
+        val typedArray = context.obtainStyledAttributes(attrs, R.styleable.AudioWaveView, 0, 0)
+        audioWave.waveColor = typedArray.getColor(R.styleable.AudioWaveView_wave_color, 0)
+        audioWave.waveBackgroundColor = typedArray.getColor(R.styleable.AudioWaveView_wave_background_color, 0)
+        audioWave.waveGap = typedArray.getDimension(R.styleable.AudioWaveView_wave_gap, dip(2f).toFloat())
+        typedArray.recycle()
     }
 
-  var chunkWidth: Int = dip(2)
-    set(value) {
-      field = Math.abs(value)
-      redrawData()
+    override fun onAttachedToWindow() {
+        super.onAttachedToWindow()
+        audioWave.onAttached()
     }
 
-  var chunkSpacing: Int = dip(1)
-    set(value) {
-      field = Math.abs(value)
-      redrawData()
+    override fun onDetachedFromWindow() {
+        super.onDetachedFromWindow()
+        audioWave.onDetached()
     }
 
-  var chunkRadius: Int = 0
-    set(value) {
-      field = Math.abs(value)
-      redrawData()
-    }
+    override fun onDraw(canvas: Canvas) {
+        super.onDraw(canvas)
+        canvas.drawColor(Color.TRANSPARENT)
 
-  var minChunkHeight: Int = dip(2)
-    set(value) {
-      field = Math.abs(value)
-      redrawData()
-    }
-
-  var waveColor: Int = Color.BLACK
-    set(value) {
-      wavePaint = smoothPaint(value.withAlpha(0xAA))
-      waveFilledPaint = filterPaint(value)
-      redrawData()
-    }
-
-  var progress: Float = 0F
-    set(value) {
-      require(value in 0..100) { "Progress must be in 0..100" }
-
-      field = Math.abs(value)
-
-      onProgressListener?.onProgressChanged(field, isTouched)
-      onProgressChanged(field, isTouched)
-
-      postInvalidate()
-    }
-
-  var scaledData: ByteArray = byteArrayOf()
-    set(value) {
-      field = if (value.size <= chunksCount) {
-        ByteArray(chunksCount).paste(value)
-      } else {
-        value
-      }
-
-      redrawData()
-    }
-
-  var expansionDuration: Long = 400
-    set(value) {
-      field = Math.max(400, value)
-      expansionAnimator.duration = field
-    }
-
-  var isExpansionAnimated: Boolean = true
-
-  var isTouchable = true
-
-  var isTouched = false
-    private set
-
-  val chunksCount: Int
-    get() = w / chunkStep
-
-  private val chunkStep: Int
-    get() = chunkWidth + chunkSpacing
-
-  private val centerY: Int
-    get() = h / 2
-
-  private val progressFactor: Float
-    get() = progress / 100F
-
-  private val initialDelay: Long = 50
-
-  private val expansionAnimator = ValueAnimator.ofFloat(0.0F, 1.0F).apply {
-    duration = expansionDuration
-    interpolator = OvershootInterpolator()
-    addUpdateListener {
-      redrawData(factor = it.animatedFraction)
-    }
-  }
-
-  private var wavePaint = smoothPaint(waveColor.withAlpha(0xAA))
-  private var waveFilledPaint = filterPaint(waveColor)
-  private var waveBitmap: Bitmap? = null
-
-  private var w: Int = 0
-  private var h: Int = 0
-
-  override fun onDraw(canvas: Canvas) {
-    super.onDraw(canvas)
-    val cv = canvas
-
-    waveBitmap?.let { bitmap ->
-        cv.transform {
-            clipRect(0, 0, w, h)
-            drawBitmap(bitmap, 0F, 0F, wavePaint)
+        if (audioWave.isDirty()) {
+            audioWave.drawWave(width, height)
         }
 
-        cv.transform {
-            clipRect(0F, 0F, w * progressFactor, h.toFloat())
-            drawBitmap(bitmap, 0F, 0F, waveFilledPaint)
+        if (audioWave.waveBackgroundBitmap != null) {
+            canvas.drawBitmap(audioWave.waveBackgroundBitmap!!, 0f, 0f, audioWave.waveBackgroundPaint)
+        }
+
+        if (audioWave.waveBitmap != null) {
+            val progressWidth = if (duration == 0L) 0f else audioWave.waveBitmap!!.width * progress / duration
+            canvas.transform {
+                clipRect(rectFOf(0, 0, progressWidth.roundToInt(), height))
+                drawBitmap(audioWave.waveBitmap!!, 0f, 0f, audioWave.wavePaint)
+            }
         }
     }
-  }
 
-  // suppressed here since we allocate only once,
-  // when the wave bounds have been just calculated(it happens once)
-  @SuppressLint("DrawAllocation")
-  override fun onLayout(changed: Boolean, left: Int, top: Int, right: Int, bottom: Int) {
-    super.onLayout(changed, left, top, right, bottom)
-    w = right - left
-    h = bottom - top
-
-    if (waveBitmap.fits(w, h)) {
-      return
+    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
+        val viewWidth = MeasureSpec.getSize(widthMeasureSpec)
+        val viewHeight = MeasureSpec.getSize(heightMeasureSpec)
+        setMeasuredDimension(viewWidth, viewHeight)
     }
 
-    if (changed) {
-      waveBitmap.safeRecycle()
-      waveBitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888)
-
-      // absolutely ridiculous hack to draw wave in RecyclerView items
-      scaledData = when (scaledData.size) {
-        0 -> byteArrayOf()
-        else -> scaledData
-      }
-    }
-  }
-
-  @SuppressLint("ClickableViewAccessibility")
-  override fun onTouchEvent(event: MotionEvent?): Boolean {
-    event ?: return super.onTouchEvent(event)
-
-    if (!isTouchable || !isEnabled) {
-      return false
+    override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
+        super.onSizeChanged(w, h, oldw, oldh)
+        audioWave.setBitmapSize(w, h)
+        if (samples.isReady()) {
+            val waveData = samples.getWaveData(w, h.toFloat())
+            if (waveData != null) {
+                audioWave.setWaveData(waveData)
+            }
+        }
     }
 
-    when (event.action) {
-      MotionEvent.ACTION_DOWN -> {
-        isTouched = true
-        progress = event.toProgress()
+    private var downX = 0f
+    private var isDragging = false
 
-        // these paired calls look ugly, but we need them for Java
-        onProgressListener?.onStartTracking(progress)
-        onStartTracking(progress)
-
-        return true
-      }
-      MotionEvent.ACTION_MOVE -> {
-        isTouched = true
-        progress = event.toProgress()
-        return true
-      }
-      MotionEvent.ACTION_UP -> {
-        isTouched = false
-        onProgressListener?.onStopTracking(progress)
-        onStopTracking(progress)
-        return false
-      }
-      else -> {
-        isTouched = false
+    override fun onTouchEvent(event: MotionEvent): Boolean {
+        if (!isEnabled || !isClickable || duration == 0L) {
+            return false
+        }
+        val touchSlop = ViewConfiguration.get(context).scaledTouchSlop
+        when (event.action) {
+            MotionEvent.ACTION_DOWN -> {
+                parent.requestDisallowInterceptTouchEvent(true)
+                isDragging = false
+                downX = event.x
+                return true
+            }
+            MotionEvent.ACTION_MOVE -> {
+                val dx = event.x - downX
+                if (abs(dx) > touchSlop) {
+                    isDragging = true
+                }
+                val rawProgress = event.x / width
+                progress = (rawProgress * duration).toLong().clamp(0, duration)
+                onProgressChanged?.invoke(progress.toFloat() / duration.toFloat())
+                invalidate()
+                return true
+            }
+            MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL -> {
+                parent.requestDisallowInterceptTouchEvent(false)
+                if (isDragging) {
+                    onProgressChanged?.invoke(progress.toFloat() / duration.toFloat())
+                }
+                isDragging = false
+                return true
+            }
+        }
         return super.onTouchEvent(event)
-      }
     }
-  }
 
-  // Java convenience
-  fun setRawData(raw: ByteArray, callback: OnSamplingListener) {
-    setRawData(raw) { callback.onComplete() }
-  }
-
-  @JvmOverloads
-  fun setRawData(raw: ByteArray, callback: () -> Unit = {}) {
-    MAIN_THREAD.postDelayed({
-      Sampler.downSampleAsync(raw, chunksCount) {
-        scaledData = it
-        callback()
-
-        if (isExpansionAnimated) {
-          animateExpansion()
+    fun setRawData(@WorkerThread rawData: ByteArray) {
+        MAIN_THREAD.post {
+            samples.setRawData(rawData)
+            if (samples.isReady()) {
+                val waveData = samples.getWaveData(width, height.toFloat())
+                if (waveData != null) {
+                    audioWave.setWaveData(waveData)
+                }
+            }
         }
-      }
-    }, initialDelay)
-  }
-
-  private fun MotionEvent.toProgress() = this@toProgress.x.clamp(0F, w.toFloat()) / w * 100F
-
-  private fun redrawData(canvas: Canvas? = waveBitmap?.inCanvas(), factor: Float = 1.0F) {
-    if (waveBitmap == null || canvas == null) return
-
-    waveBitmap.flush()
-
-    scaledData.forEachIndexed { i, chunk ->
-      val chunkHeight = ((chunk.abs.toFloat() / Byte.MAX_VALUE) * chunkHeight).toInt()
-      val clampedHeight = Math.max(chunkHeight, minChunkHeight)
-      val heightDiff = (clampedHeight - minChunkHeight).toFloat()
-      val animatedDiff = (heightDiff * factor).toInt()
-
-      canvas.drawRoundRect(
-          rectFOf(
-              left = chunkSpacing / 2 + i * chunkStep,
-              top = centerY - minChunkHeight - animatedDiff,
-              right = chunkSpacing / 2 + i * chunkStep + chunkWidth,
-              bottom = centerY + minChunkHeight + animatedDiff
-          ),
-          chunkRadius.toFloat(),
-          chunkRadius.toFloat(),
-          wavePaint
-      )
     }
 
-    postInvalidate()
-  }
-
-  private fun animateExpansion() {
-    expansionAnimator.start()
-  }
-
-  private fun inflateAttrs(attrs: AttributeSet?) {
-    val resAttrs = context.theme.obtainStyledAttributes(
-        attrs,
-        R.styleable.AudioWaveView,
-        0,
-        0
-    ) ?: return
-
-    with(resAttrs) {
-      chunkHeight = getDimensionPixelSize(R.styleable.AudioWaveView_chunkHeight, chunkHeight)
-      chunkWidth = getDimensionPixelSize(R.styleable.AudioWaveView_chunkWidth, chunkWidth)
-      chunkSpacing = getDimensionPixelSize(R.styleable.AudioWaveView_chunkSpacing,
-          chunkSpacing)
-      minChunkHeight = getDimensionPixelSize(R.styleable.AudioWaveView_minChunkHeight,
-          minChunkHeight)
-      chunkRadius = getDimensionPixelSize(R.styleable.AudioWaveView_chunkRadius, chunkRadius)
-      isTouchable = getBoolean(R.styleable.AudioWaveView_touchable, isTouchable)
-      waveColor = getColor(R.styleable.AudioWaveView_waveColor, waveColor)
-      progress = getFloat(R.styleable.AudioWaveView_progress, progress)
-      isExpansionAnimated = getBoolean(R.styleable.AudioWaveView_animateExpansion,
-          isExpansionAnimated)
-      recycle()
+    fun setProgress(@IntRange(from = 0) progress: Long) {
+        if (progress != this.progress) {
+            this.progress = progress.clamp(0, duration)
+            invalidate()
+        }
     }
-  }
+
+    fun setDuration(@IntRange(from = 0) duration: Long) {
+        this.duration = duration.clamp(0, Long.MAX_VALUE)
+    }
+
+    fun setOnProgressChanged(onProgressChanged: (Float) -> Unit) {
+        this.onProgressChanged = onProgressChanged
+    }
 }
