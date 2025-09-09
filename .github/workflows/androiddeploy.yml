@@ -1,0 +1,39 @@
+# Nombre del flujo de trabajo que se mostrará en GitHub Actions
+name: Android CI
+
+# Eventos que activarán el flujo de trabajo
+on:
+  push:
+    branches: [ "main" ] # Se activa al hacer push a la rama 'main'
+  pull_request:
+    branches: [ "main" ] # Se activa al crear o actualizar un pull request a 'main'
+
+# Las tareas que se van a ejecutar
+jobs:
+  build:
+    # El servidor en el que se ejecutará este job
+    runs-on: ubuntu-latest
+
+    # Pasos para compilar el proyecto
+    steps:
+    - name: Descargar el código del repositorio
+      uses: actions/checkout@v4
+      
+    - name: Configurar Java 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: 'gradle' # Cachea dependencias de Gradle para compilaciones más rápidas
+        
+    - name: Dar permisos de ejecución a gradlew
+      run: chmod +x gradlew
+      
+    - name: Construir la aplicación con Gradle (generar el APK de depuración)
+      run: ./gradlew assembleDebug
+
+    - name: Subir el APK de depuración como artefacto
+      uses: actions/upload-artifact@v4
+      with:
+        name: app-debug.apk # El nombre con el que se guardará el artefacto
+        path: app/build/outputs/apk/debug/app-debug.apk # La ruta del archivo APK
