@@ -12,67 +12,66 @@ import android.os.Handler
 import android.os.Looper
 import android.view.View
 import androidx.annotation.ColorInt
-import androidx.annotation.Px
-import kotlin.math.abs
+import androidx.annotation.IntRange
 import kotlin.math.roundToInt
+import kotlin.math.abs
 
-internal val MAIN_THREAD = Handler(Looper.getMainLooper())
+internal object Graphics {
+    internal val MAIN_THREAD = Handler(Looper.getMainLooper())
 
-internal fun smoothPaint(@ColorInt color: Int): Paint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-    this.color = color
-}
+    internal fun smoothPaint(@ColorInt color: Int): Paint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+        this.color = color
+    }
 
-internal fun filterPaint(@ColorInt color: Int): Paint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-    colorFilter = PorterDuffColorFilter(color, PorterDuff.Mode.SRC_IN)
-}
+    internal fun filterPaint(@ColorInt color: Int): Paint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+        colorFilter = PorterDuffColorFilter(color, PorterDuff.Mode.SRC_IN)
+    }
 
-internal inline fun Canvas.transform(crossinline init: Canvas.() -> Unit) {
-    save()
-    init()
-    restore()
-}
+    internal inline fun Canvas.transform(crossinline init: Canvas.() -> Unit) {
+        save()
+        init()
+        restore()
+    }
 
-@Px
-internal fun View.dip(value: Int): Int = (value * resources.displayMetrics.density).roundToInt()
+    internal fun Float.clamp(min: Float, max: Float): Float = kotlin.math.max(min, kotlin.math.min(this, max))
 
-@ColorInt
-internal fun @receiver:ColorInt Int.withAlpha(@Px alpha: Int): Int = Color.argb(alpha, Color.red(this), Color.green(this), Color.blue(this))
+    internal fun Long.clamp(min: Long, max: Long): Long = kotlin.math.max(min, kotlin.math.min(this, max))
 
-internal fun Float.clamp(min: Float, max: Float): Float = Math.max(min, Math.min(this, max))
+    internal fun rectFOf(left: Int, top: Int, right: Int, bottom: Int): RectF = RectF(left.toFloat(), top.toFloat(), right.toFloat(), bottom.toFloat())
 
-internal fun rectFOf(left: Int, top: Int, right: Int, bottom: Int): RectF = RectF(left.toFloat(), top.toFloat(), right.toFloat(), bottom.toFloat())
+    internal fun Bitmap?.fits(neededW: Int, neededH: Int): Boolean = this != null && width == neededW && height == neededH
 
-internal fun Bitmap?.fits(neededW: Int, neededH: Int): Boolean = this != null && width == neededW && height == neededH
-
-internal fun Bitmap?.safeRecycle() {
-    this?.run {
-        if (!isRecycled) {
-            recycle()
+    internal fun Bitmap?.safeRecycle() {
+        this?.run {
+            if (!isRecycled) {
+                recycle()
+            }
         }
     }
-}
 
-internal fun Bitmap?.flush() {
-    this?.run {
-        eraseColor(Color.TRANSPARENT)
+    internal fun Bitmap.inCanvas(f: Canvas.() -> Unit = {}): Canvas {
+        val canvas = Canvas(this)
+        canvas.f()
+        return canvas
     }
-}
 
-internal fun Bitmap.inCanvas(f: Canvas.() -> Unit = {}): Canvas {
-    val canvas = Canvas(this)
-    canvas.f()
-    return canvas
-}
-
-internal fun ByteArray.paste(value: ByteArray): ByteArray {
-    for (i in value.indices) {
-        this[i] = value[i]
+    internal fun ByteArray.paste(value: ByteArray): ByteArray {
+        for (i in value.indices) {
+            this[i] = value[i]
+        }
+        return this
     }
-    return this
+
+    internal val Int.abs: Int
+        get() = abs(this)
+
+    internal val Byte.abs: Byte
+        get() = abs(this.toInt()).toByte()
+
+    internal val Int.roundToInt: Int
+        get() = this.roundToInt()
+
+    internal fun View.dip(value: Float): Float = value * resources.displayMetrics.density
+
+    internal fun @receiver:ColorInt Int.withAlpha(@IntRange(from = 0, to = 255) alpha: Int): Int = Color.argb(alpha, Color.red(this), Color.green(this), Color.blue(this))
 }
-
-internal val Byte.abs: Byte
-    get() = abs(this.toInt()).toByte()
-
-internal val Int.abs: Int
-    get() = abs(this)
