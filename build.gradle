@@ -1,6 +1,11 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     ext.kotlin_version = "1.9.22"
+    repositories {
+        // Este bloque es necesario para que Gradle encuentre los plugins.
+        google()
+        mavenCentral()
+    }
     dependencies {
         // Versión actualizada del Android Gradle Plugin (AGP)
         classpath 'com.android.tools.build:gradle:8.4.1'
@@ -11,10 +16,8 @@ buildscript {
     }
 }
 
-// allprojects ahora solo tiene la tarea clean
+// allprojects ahora solo tiene la tarea clean. Los repositorios están en settings.gradle.
 allprojects {
-    // Los repositorios se definen solo en settings.gradle.
-    // Esto evita el error que acabamos de ver.
 }
 
 task clean(type: Delete) {
